@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 export class ProductService {
 
 
-  private _productUrl='../assets/products.json';
+  private _productsUrl='../assets/products.json';
   private _albumUrl='../assets/album.json';
   constructor(private _http: Http) { }
 
@@ -22,6 +22,6 @@ export class ProductService {
   }
 
   getProducts() : Observable<Product[]>{
-    return this._http.get(this._productUrl).map((response) => <Product[]>response.json());
+    return this._http.get(this._productsUrl).map((response) => <Product[]>response.json());
   }
 }
